@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formatting dates using the Moment.js date library</title>
+</head>
+<body>
+
+<p><time data-momentjs>2012-10-08</time></p>
+<p><time data-momentjs>1976-09-09</time></p>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/timrwood/moment/1.1.1/moment.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("time[data-momentjs]").each(function (idx, item) {
+            var $item = $(item),
+                    mdate = moment($item.text(), "YYYY-MM-DD");
+            $item.attr("title", mdate.format("ddd, MMM Do, YYYY")).text(mdate.fromNow());
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Web App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!--Custom styling-->
+    <style>
+        #level0, .accordion{
+            background-color: #1ABC9C;
+            height: 40px;
+            padding-bottom: 15px;
+            padding-top: 18px;
+            color: white;
+            font-size: 24px;
+        }
+        #level1{
+            background-color: #1ABC9C;
+            height: 40px;
+            padding-bottom: 15px;
+            padding-top: 18px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .row{
+            border-color: black;
+            border-width: 2px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <h1>
+                <span id="date"></span>
+            </h1>
+            <script src="js/moment.js"></script>
+        </div>
+    </div>
+    <div id="level0" class="row">
+        <div class="span12">
+            <span class="fui-plus-16"></span> Room 1
+        </div>
+    </div>
+    <div id="level1" class="row">
+        <div class="span12">
+            <span class="fui-plus-16"></span> Room 2
+        </div>
+    </div>
+
+    <!--<div class="accordion" id="accordion2">-->
+        <!--<div class="accordion-group">-->
+            <!--<div class="accordion-heading">-->
+                <!--<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">-->
+                    <!--Collapsible Group Item #1-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div id="collapseOne" class="accordion-body collapse in">-->
+                <!--<div class="accordion-inner">-->
+                    <!--Anim pariatur cliche...-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="accordion-group">-->
+            <!--<div class="accordion-heading">-->
+                <!--<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">-->
+                    <!--Collapsible Group Item #2-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div id="collapseTwo" class="accordion-body collapse">-->
+                <!--<div class="accordion-inner">-->
+                    <!--Anim pariatur cliche...-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+
+    <script>
+        function countdown(){
+            var now = moment().format("h:MM:ss A");
+            // Saturday, June 9th, 2007, 5:46:21 PM
+            $('#date').text(now);
+        };
+        setInterval(countdown, 1000);
+    </script>
+
+
+</div> <!-- /container -->
+
+<footer>
+    <div class="container">
+
+    </div>
+</footer>
+
+<!-- Load JS here for greater good =============================-->
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="js/jquery.dropkick-1.0.0.js"></script>
+<script src="js/custom_checkbox_and_radio.js"></script>
+<script src="js/custom_radio.js"></script>
+<script src="js/jquery.tagsinput.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="http://vjs.zencdn.net/c/video.js"></script>
+<script src="js/application.js"></script>
+<script src="js/collapse.js"></script>
+
+
+<!--[if lt IE 8]>
+<script src="js/icon-font-ie7.js"></script>
+<script src="js/icon-font-ie7-24.js"></script>
+<![endif]-->
+
+</body>
+</html>
