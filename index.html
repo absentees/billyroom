@@ -19,26 +19,40 @@
 
     <!--Custom styling-->
     <style>
-        #level0, .accordion{
-            background-color: #1ABC9C;
-            height: 40px;
-            padding-bottom: 15px;
-            padding-top: 18px;
-            color: white;
-            font-size: 24px;
-        }
-        #level1{
-            background-color: #1ABC9C;
-            height: 40px;
-            padding-bottom: 15px;
-            padding-top: 18px;
-            color: white;
-            font-size: 24px;
+
+
+        /*DELETE*/
+        /*#level0, .accordion{*/
+            /*background-color: #1ABC9C;*/
+            /*height: 40px;*/
+            /*padding-bottom: 15px;*/
+            /*padding-top: 18px;*/
+            /*color: white;*/
+            /*font-size: 24px;*/
+        /*}*/
+        /*#level1{*/
+           /**/
+        /*}*/
+
+        #title{
+            background-color: white;
+            color: #2C3E50;
         }
 
         .row{
             border-color: black;
             border-width: 2px;
+            background-color: #1ABC9C;
+            height: 40px;
+            padding-bottom: 15px;
+            padding-top: 18px;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 3px;
+        }
+
+        .container{
+
         }
     </style>
 
@@ -47,9 +61,10 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
+    <div id="title" class="row">
         <div class="span12">
             <h1>
+                <span class="fui-time-16"></span>
                 <span id="date"></span>
             </h1>
             <script src="js/moment.js"></script>
