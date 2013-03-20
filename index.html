@@ -39,20 +39,22 @@
             color: #2C3E50;
         }
 
-        .row{
+        .row-fluid{
             border-color: black;
             border-width: 2px;
             background-color: #1ABC9C;
             height: 40px;
             padding-bottom: 15px;
             padding-top: 18px;
+            padding-left: 15px;
+            padding-right: 15px;
             color: white;
             font-size: 24px;
             margin-bottom: 3px;
         }
 
-        .container{
-
+        .container-fluid{
+            margin-right: 30px;
         }
     </style>
 
@@ -60,8 +62,8 @@
 
 </head>
 <body>
-<div class="container">
-    <div id="title" class="row">
+<div class="container-fluid">
+    <div id="title" class="row-fluid">
         <div class="span12">
             <h1>
                 <span class="fui-time-16"></span>
@@ -69,17 +71,35 @@
             </h1>
             <script src="js/moment.js"></script>
         </div>
+    </div> <!-- /Title -->
+
+    <!--Rooms-->
+
+    <!--Level 0-->
+    <div id="level0" class="row-fluid">
+        <!--<div class="span12">-->
+
+            <div class="span6">
+                <span class="fui-plus-16"></span> Room 1
+            </div>
+
+            <div id="time_left1" class="span6" style="text-align: right;">
+
+            </div>
+
+
+        <!--</div>-->
     </div>
-    <div id="level0" class="row">
-        <div class="span12">
-            <span class="fui-plus-16"></span> Room 1
-        </div>
-    </div>
-    <div id="level1" class="row">
-        <div class="span12">
-            <span class="fui-plus-16"></span> Room 2
-        </div>
-    </div>
+
+    <!--Level 1-->
+    <div id="level1" class="row-fluid">
+
+        <div class="span6"><span class="fui-plus-16"></span> Room 2</div>
+
+        <div id="time_left2" class="span6" style="text-align: right;"></div>
+
+
+    </div> <!--Level 1-->
 
     <!--<div class="accordion" id="accordion2">-->
         <!--<div class="accordion-group">-->
@@ -110,14 +130,56 @@
 
 
 
+    <!--Live Time now-->
     <script>
+
+        var timeNow = moment().format("h:MM:ss A"); // Sets up the time now
+        var finishTime1 = moment().add('m', 10); // Add an hour onto the time now to act as a fake finish time
+        var finishTime2 = moment().add('h', 1); // Add an hour onto the time now to act as a fake finish time
+        var width100 = 100;
+
         function countdown(){
-            var now = moment().format("h:MM:ss A");
-            // Saturday, June 9th, 2007, 5:46:21 PM
-            $('#date').text(now);
-        };
+            timeNow = moment().format("h:MM:ss A"); // Gets the time now
+            $('#date').text(timeNow); // Update the clock
+            timeLeft(); // Updates the time remaining on the rooms
+           // shrinkRow(); // Shrinks the row
+            width100 -= 1;
+//            shrinkRow(width100);
+
+        }
+
+        function timeLeft(){
+
+            var timeRemaining = finishTime1.fromNow();
+//            timeRemaining.format("h:MM:ss");
+
+            $("#time_left1").text(timeRemaining);
+
+            timeRemaining = finishTime2.fromNow();
+            $("#time_left2").text(timeRemaining);
+        }
+
+        //function shrinkRow(a){
+//            $("#level0").click(function () {
+//
+//                    $(this).effect("scale", {
+//                    percent: 50,
+//                    direction: 'horizontal'
+//                }, 1000);
+//            })
+        //}
+
+
+
         setInterval(countdown, 1000);
+
+
+
+
     </script>
+
+
+
 
 
 </div> <!-- /container -->
@@ -140,7 +202,15 @@
 <script src="http://vjs.zencdn.net/c/video.js"></script>
 <script src="js/application.js"></script>
 <script src="js/collapse.js"></script>
+<script>
+    $("#level0").click(function () {
 
+        $(this).effect("scale", {
+            percent: 50,
+            direction: 'horizontal'
+        }, 1000);
+    })
+</script>
 
 <!--[if lt IE 8]>
 <script src="js/icon-font-ie7.js"></script>
