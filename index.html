@@ -142,9 +142,8 @@
             timeNow = moment().format("h:MM:ss A"); // Gets the time now
             $('#date').text(timeNow); // Update the clock
             timeLeft(); // Updates the time remaining on the rooms
-           // shrinkRow(); // Shrinks the row
             width100 -= 1;
-//            shrinkRow(width100);
+            shrinkRow(width100);
 
         }
 
@@ -159,15 +158,25 @@
             $("#time_left2").text(timeRemaining);
         }
 
-        //function shrinkRow(a){
-//            $("#level0").click(function () {
-//
-//                    $(this).effect("scale", {
-//                    percent: 50,
-//                    direction: 'horizontal'
-//                }, 1000);
-//            })
-        //}
+
+
+        function shrinkRow(width){
+
+
+                    $("#level0").effect("scale", {
+                    percent: 98,
+                    direction: 'horizontal',
+                    origin: 'left'
+                    }, 1000);
+
+
+                    $("#level1").effect("scale", {
+                        percent: 99,
+                        direction: 'horizontal',
+                        origin: 'left'
+                    }, 1000);
+
+        }
 
 
 
@@ -192,7 +201,8 @@
 
 <!-- Load JS here for greater good =============================-->
 <script src="js/jquery-1.8.2.min.js"></script>
-<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<!--<script src="js/jquery-ui-1.10.0.custom.min.js"></script>-->
 <script src="js/jquery.dropkick-1.0.0.js"></script>
 <script src="js/custom_checkbox_and_radio.js"></script>
 <script src="js/custom_radio.js"></script>
@@ -202,15 +212,25 @@
 <script src="http://vjs.zencdn.net/c/video.js"></script>
 <script src="js/application.js"></script>
 <script src="js/collapse.js"></script>
-<script>
-    $("#level0").click(function () {
+<!--<script>-->
+    <!--$("#level0").click(function () {-->
 
-        $(this).effect("scale", {
-            percent: 50,
-            direction: 'horizontal'
-        }, 1000);
-    })
-</script>
+        <!--$(this).effect("scale", {-->
+            <!--percent: 50,-->
+            <!--direction: 'horizontal',-->
+            <!--origin: 'left'-->
+
+        <!--}, 1000);-->
+    <!--});-->
+
+<!--//-->
+<!--//    $("#level0").hover(function () {-->
+<!--//        $("#level0").animate({ height:"380px" });-->
+<!--//    });-->
+
+
+
+<!--</script>-->
 
 <!--[if lt IE 8]>
 <script src="js/icon-font-ie7.js"></script>
